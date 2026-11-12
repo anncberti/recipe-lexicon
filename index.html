@@ -5,9 +5,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>American pancakes recipe</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400..800&display=swap" rel="stylesheet">
     </head>
 
     <body>
+        <header>
+            <p class="logo">Logo</p>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Recipes</a></li>
+                    <li><a>About</a></li>
+                    <li><button type="button">Share recipe</button></li>
+                </ul>
+            </nav>
+        </header>
         <div class="page">  
             <main>
                 <img class="hero" src="pancakes.jpg" alt="Stack of pancakes with butter and maple syrup">
@@ -19,7 +32,12 @@
                     <section>
                         <fieldset class="checklist">
                             <legend><h2>Ingredients</h2></legend>
-                            <dl class="facts">Portions: 4</dl>
+                            <dl class="facts">
+                                <div>
+                                    <dt>Portions</dt>
+                                    <dd>4</dd>
+                                </div>
+                            </dl>
                             
                             <ul role="list">
                                 <li><label><input type="checkbox"> 2 1/2 dl all-purpose flour</label></li>
@@ -61,5 +79,13 @@
                 </article>
             </main>
         </div>
+        <footer>
+            <div>
+                <img src="https://picsum.photos/80/40" alt="">
+            </div>
+            <div>
+                <p>© Annie Bertilsson</p>
+            </div>
+        </footer>
     </body>
 </html>
