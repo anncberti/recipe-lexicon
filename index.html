@@ -11,49 +11,59 @@
     </head>
 
     <body>
-        <header>
-            <p class="logo">Logo</p>
+        <header class="cluster p-4 bg-100">
+            <a class="logo"><img src="logo.png" alt="Mama T's logo"></a>
             <nav>
-                <ul class="nav-links">
-                    <li><a href="#">Recipes</a></li>
-                    <li><a>About</a></li>
-                    <li><button type="button">Share recipe</button></li>
+                <ul role="list" class="cluster">
+                    <li><a class="text-color-primary menu-item" href="#">Recipes</a></li>
+                    <li><a class="text-color-primary menu-item" href="#">About</a></li>
+                    <li><button type="button" data-variant="highlight">Share recipe</button></li>
                 </ul>
             </nav>
         </header>
-        <div class="page">  
-            <main>
+        <div class="wrapper bg-white grow">  
+            <main class="px-6 py-6">
                 <img class="hero" src="pancakes.jpg" alt="Stack of pancakes with butter and maple syrup">
                 
-                <article>
-                    <h1>Easy recipe for American pancakes</h1>
-                    <p class="text-banner">Make traditional American pancakes with this easy and delicious pancake recipe.</p>
-                    
-                    <section>
-                        <fieldset class="checklist">
-                            <legend><h2>Ingredients</h2></legend>
-                            <dl class="facts">
-                                <div>
-                                    <dt>Portions</dt>
-                                    <dd>4</dd>
-                                </div>
-                            </dl>
-                            
-                            <ul role="list">
-                                <li><label><input type="checkbox"> 2 1/2 dl all-purpose flour</label></li>
-                                <li><label><input type="checkbox"> 1/2 tsp salt</label></li>
-                                <li><label><input type="checkbox"> 3 dl milk</label></li>
-                                <li><label><input type="checkbox"> 2 eggs</label></li>
-                                <li><label><input type="checkbox"> 2 tsp baking powder</label></li>
-                                <li><label><input type="checkbox"> butter (for frying)</label></li>
-                                <li><label><input type="checkbox"> maple syrup, berries or fruit for serving</label></li>
-                            </ul>
+                <article class="flow">
+                    <h1>American-style vegan pancakes</h1>
+                    <p>Make traditional American pancakes with this easy and delicious pancake recipe, completely free from animal products.</p>
+                    <dl class="facts">
+                        <div class="card">
+                            <dt>Portions</dt>
+                            <dd>4</dd>
+                        </div>
+                        <div class="card">
+                        <div>
+                            <dt>Portions</dt>
+                            <dd>4</dd>
+                        </div>
+                        </div>
+                        <div class="card">
+                            <dt>Portions</dt>
+                            <dd>4</dd>
+                        </div>
+                    </dl>
+                    <section class="flow">
+                        <fieldset class="checklist flow">
+                            <legend>Ingredients</legend>
+                            <div class="card">
+                                <ul role="list">
+                                    <li><label><input type="checkbox"> 2 1/2 dl all-purpose flour</label></li>
+                                    <li><label><input type="checkbox"> 1/2 tsp salt</label></li>
+                                    <li><label><input type="checkbox"> 3 dl milk</label></li>
+                                    <li><label><input type="checkbox"> 2 eggs</label></li>
+                                    <li><label><input type="checkbox"> 2 tsp baking powder</label></li>
+                                    <li><label><input type="checkbox"> butter (for frying)</label></li>
+                                    <li><label><input type="checkbox"> maple syrup, berries or fruit for serving</label></li>
+                                </ul>
+                            </div>
                         </fieldset>
                     </section>
 
-                    <section>
+                    <section class="flow">
                         <h2>Instructions</h2>
-                        <ol>
+                        <ol class="flow">
                             <li>Mix together flour, baking powder, and salt in a bowl.</li>
                             <li>Slowly pour in half of the milk while whisking until it's a smooth batter.</li>
                             <li>Whisk in the rest of the milk and the eggs.</li>
@@ -63,23 +73,23 @@
                         </ol>
                     </section>
 
-                    <section>
+                    <section class="flow">
                         <h2>Serving suggestions</h2>
-                        <div class="pictures">
+                        <div class="grid gallery">
                             <figure>
                                 <img src="pancakes2.jpg" alt="Stack of pancakes served with blueberries, raspberries and maple syrup on top">
-                                <figcaption>With mixed berries</figcaption>
+                                <figcaption class="text-sm">With mixed berries</figcaption>
                             </figure>
                             <figure>
                                 <img src="easy-american-pancakes.jpg" alt="Stack of pancakes served with blueberries and maple syrup on top">
-                                <figcaption>With blueberries and syrup</figcaption>
+                                <figcaption class="text-sm">With blueberries and syrup</figcaption>
                             </figure>
                         </div>
                     </section>
                 </article>
             </main>
         </div>
-        <footer>
+        <footer class="cluster p-4 bg-white">
             <div>
                 <img src="https://picsum.photos/80/40" alt="">
             </div>
