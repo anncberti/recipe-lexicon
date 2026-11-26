@@ -11,64 +11,64 @@
     </head>
 
     <body>
-        <header class="p-4">
-            <a class="logo"><img src="logo4.svg" alt="Mama T's logo"></a>
-            <nav class="main__nav">
-                <ul class="nav__links" role="list" class="cluster">
-                    <li><a class="text-color-primary menu-item" href="#">Recipes</a></li>
-                    <li><a class="text-color-primary menu-item" href="#">About</a></li>
+        <a class="skip-link" href="#main">Skip to main content</a>
+
+        <header class="site-header cluster">
+            <a class="logo" href="index.html"><img src="logo4.svg" alt="Mama T's, home"></a>
+            <nav class="site-nav" aria-label="Main">
+                <ul class="site-nav__list cluster" role="list">
+                    <li><a class="site-nav__link" href="index.html" aria-current="page">Recipes</a></li>
+                    <li><a class="site-nav__link" href="#">About</a></li>
+                    <li><a class="button" data-variant="highlight" href="form.html">Upload recipe</a></li>
                 </ul>
             </nav>
-            <a href="form.html">
-                <button type="button" data-variant="highlight">Upload recipe</button>
-            </a>
+            <label class="theme-toggle">
+                <input class="theme-toggle__input" type="checkbox" role="switch">
+                Dark mode
+            </label>
         </header>
-        <div class="wrapper bg-white grow">  
-            <main class="px-6 py-6 grid">
-                <img class="hero" style="grid-area: area-1;" src="pancakes.jpg" alt="Stack of pancakes with butter and maple syrup">
-                
-                <article class="flow" style="grid-area: area-2">
+
+        <main class="wrapper region" id="main">
+            <article class="recipe">
+                <img class="recipe__hero" src="pancakes.jpg" alt="Stack of pancakes with butter and maple syrup">
+
+                <header class="recipe__intro flow">
                     <h1>American-style vegan pancakes</h1>
                     <p>The BEST and fluffiest vegan pancakes made with just 6 easy pantry staples you probably have on hand right now! Made in 1 bowl, the recipe can easily doubled, tripled or even quadrupled.</p>
-                
-                    <dl class="facts">
+
+                    <dl class="facts auto-grid">
                         <div class="card">
                             <dt>Portions</dt>
                             <dd>4</dd>
                         </div>
                         <div class="card">
-                        <div>
                             <dt>Time</dt>
-                            <dd>4</dd>
-                        </div>
+                            <dd>20 min</dd>
                         </div>
                         <div class="card">
                             <dt>Difficulty</dt>
-                            <dd>4</dd>
+                            <dd>Easy</dd>
                         </div>
                     </dl>
-                </article>
-                <section class="flow" style="grid-area: area-3">
-                    <fieldset class="checklist flow">
-                        <legend>Ingredients</legend>
-                        <div class="card">
-                            <ul role="list">
-                                <li><label><input type="checkbox"> 1 1/2 cups all purpose flour</label></li>
-                                <li><label><input type="checkbox"> 1 tablespoon baking powder</label></li>
-                                <li><label><input type="checkbox"> 1/2 teaspoon salt</label></li>
-                                <li><label><input type="checkbox"> 2 tablespoons granulated sugar</label></li>
-                                <li><label><input type="checkbox"> 1 cup soy milk</label></li>
-                                <li><label><input type="checkbox"> 1/2 cup water</label></li>
-                                <li><label><input type="checkbox"> 2 tablespoons canola oil</label></li>
-                                <li><label><input type="checkbox"> Maple syrup, vegan butter, berries or fruit for serving</label></li>
-                            </ul>
-                        </div>
-                    </fieldset>
-                </section>
+                </header>
 
-                <section class="flow" style="grid-area: area-4">
+                <fieldset class="recipe__ingredients checklist flow">
+                    <legend><h2>Ingredients</h2></legend>
+                    <ul class="card" role="list">
+                        <li><label><input type="checkbox"> 1 1/2 cups all purpose flour</label></li>
+                        <li><label><input type="checkbox"> 1 tablespoon baking powder</label></li>
+                        <li><label><input type="checkbox"> 1/2 teaspoon salt</label></li>
+                        <li><label><input type="checkbox"> 2 tablespoons granulated sugar</label></li>
+                        <li><label><input type="checkbox"> 1 cup soy milk</label></li>
+                        <li><label><input type="checkbox"> 1/2 cup water</label></li>
+                        <li><label><input type="checkbox"> 2 tablespoons canola oil</label></li>
+                        <li><label><input type="checkbox"> Maple syrup, vegan butter, berries or fruit for serving</label></li>
+                    </ul>
+                </fieldset>
+
+                <section class="recipe__method flow">
                     <h2>Instructions</h2>
-                    <ol class="flow instructions">
+                    <ol class="steps flow">
                         <li>In a large bowl, whisk together the flour, baking powder, salt and sugar.</li>
                         <li>Pour the milk, water and oil into the bowl with the dry ingredients, and stir with a large spoon until just combined. A few lumps are okay; do not over mix or your pancakes won't be as fluffy.</li>
                         <li>Heat a large griddle or pan over medium-high heat. Grease the pan with vegan butter or coconut oil, and drop about 1/3 cup of the batter onto it. Cook until bubbles form, then flip and cook until golden brown on the other side, about 1-2 minutes. Repeat with all the remaining batter.</li>
@@ -76,9 +76,9 @@
                     </ol>
                 </section>
 
-                <section class="flow" style="grid-area: area-5">
+                <section class="recipe__gallery flow">
                     <h2>Serving suggestions</h2>
-                    <div class="picture__grid gallery">
+                    <div class="gallery auto-grid">
                         <figure>
                             <img src="pancakes2.jpg" alt="Stack of pancakes served with blueberries, raspberries and maple syrup on top">
                             <figcaption class="text-sm">With mixed berries</figcaption>
@@ -89,16 +89,12 @@
                         </figure>
                     </div>
                 </section>
+            </article>
+        </main>
 
-            </main>
-        </div>
-        <footer class="cluster p-4 bg-white">
-            <div>
-                <img src="https://picsum.photos/80/40" alt="">
-            </div>
-            <div>
-                <p>© Annie Bertilsson</p>
-            </div>
+        <footer class="site-footer cluster">
+            <img src="https://picsum.photos/80/40" width="80" height="40" alt="">
+            <p>© Annie Bertilsson</p>
         </footer>
     </body>
 </html>

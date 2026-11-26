@@ -1,34 +1,28 @@
-/* tokens */
 :root {
-    --color-background: #F7F5F2;          /* page backdrop (body) */
-    --color-foreground: #fff;               /* default text */
+    color-scheme: light;
 
-    --color-card: #F5FDF0;                     /* raised surfaces: .wrapper, footer */
-    --color-card-foreground: #222;
-
-    --color-primary: #275559;               /* brand: h1, header, checkbox accent */
-    --color-primary-foreground: #fff;       /* text on primary */
-
-    --color-secondary: #EFD2F5;             /* supporting surfaces: header */
-    --color-secondary-foreground: #222;
-
-    --color-muted-primary: #F5FDF0;                 /* subtle surfaces: intro banner */
-    --color-muted-foreground: #555;         /* captions, helper text */
-
-    --color-accent: #F3F027;                /* highlighted button */
-    --color-accent-foreground: #166534;     /* text on accent */
-
-    --color-border: #d4d4d4;                /* dividers, outlines */
-    --ring: var(--color-primary);           /* focus outlines */
-    
-    --color-error: #b91c1c;
+    /* color */
+    --color-bg:         light-dark(hsl(36 24% 96%),  hsl(200 15% 10%));   /* page backdrop */
+    --color-surface:    light-dark(hsl(0 0% 100%),   hsl(200 14% 15%));   /* form cards, inputs */
+    --color-text:       light-dark(hsl(0 0% 13%),    hsl(36 20% 93%));
+    --color-text-muted: light-dark(hsl(0 0% 33%),    hsl(36 8% 72%));
+    --color-border:     light-dark(hsl(0 0% 83%),    hsl(200 10% 28%));
+    --color-primary:    light-dark(hsl(185 39% 25%), hsl(185 40% 70%));   /* brand: headings, links */
+    --color-on-primary: light-dark(hsl(0 0% 100%),   hsl(200 15% 10%));   /* text on primary */
+    --color-secondary:  light-dark(hsl(290 64% 89%), hsl(290 25% 25%));   /* .card fill */
+    --color-accent:     hsl(59 90% 55%);                                  /* highlight button, same in both modes */
+    --color-on-accent:  hsl(185 39% 20%);                                 /* text on accent */
+    --color-error:      light-dark(hsl(0 74% 42%),   hsl(0 90% 75%));
+    --color-success:    light-dark(hsl(142 70% 28%), hsl(142 60% 60%));
+    --color-focus:      var(--color-primary);
+    --color-shadow:     light-dark(hsl(210 10% 60% / 0.2), hsl(0 0% 0% / 0.5));
 
     /* type */
     --font-body: "Montserrat", system-ui, sans-serif;
+    --step--1: 0.9rem;
     --step-0: 1rem;
-    --step-1: 1.25rem;
     --step-2: 1.5rem;
-    --step-3: 2rem;
+    --step-3: clamp(1.75rem, 1.25rem + 2vw, 2.5rem);
     --leading-body: 1.5;
     --leading-heading: 1.2;
 
@@ -37,205 +31,44 @@
     --space-s: 0.5rem;
     --space-m: 1rem;
     --space-l: 1.5rem;
-    --space-xl: 3rem;
+    --space-xl: clamp(2rem, 1.5rem + 2vw, 3rem);
 
     /* layout */
     --page-width: 60rem;
+    --form-width: 40rem;
+    --hero-size: 15rem;
 
-    /* corner radious */
-    --border-radius-s: 0.3rem;
-    --border-radius-m: 0.7rem;
-    --border-radius-l: 1rem;
+    /* corner radius */
+    --radius-s: 0.3rem;
+    --radius-m: 0.7rem;
+    --radius-pill: 100vmax;
 }
 
-/* reset */
-* {
+
+/* RESET */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-button, input, select, textarea {
-    font: inherit; 
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    color: inherit;
 }
 
 img {
     display: block;
-    max-width: 100%;
-}
-
-/* global styles */
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100svh;
-    font-family: var(--font-body);
-    line-height: var(--leading-body);
-    background-color: var(--color-background);
-}
-
-.logo {
-    max-width: 60px;
-}
-
-.menu-item {
-    text-decoration: none;
-    font-weight: bold;
-}
-
-h1, h2, h3, h4, h5, h6, legend {
-    line-height: var(--leading-heading);
-}
-
-h1 {
-    font-size: var(--step-3);
-    font-weight: 800;
-    color: var(--color-primary);
-    /* margin-bottom: 0.5em; */
-}
-
-h2, legend {
-    font-size: var(--step-2);
-    font-weight: 700;
-}
-
-h3 {
-    font-size: var(--step-1);
-    font-weight: 600;
-}
-
-h4, h5, h6 {
-    font-size: var(--step-0);
-    font-weight: 600;
-}
-
-.difficulty {
-    display: flex;
-    gap: var(--space-m);
-}
-
-.form-card {
-    margin: 2rem 0 2rem;
-    padding: var(--border-radius-l);
-    background-color: var(--color-foreground);
-    border-radius: var(--border-radius-m);
-}
-
-form {
-  display: grid;
-  gap: var(--space-l);
-  max-width: 600px;
-}
-
-form fieldset {
-    display: grid;
-    gap: var(--space-m);
-    padding: var(--space-m);
-    border: 1px solid var(--color-border);
-    border-radius: var(--border-radius-m);
-    background-color: var(--color-foreground);
-}
-
-form legend {
-    float: left;
-    width: 100%;
-    padding: 0;
-}
-
-.field {
-    display: grid;
-    gap: var(--space-xs);
-}
-
-.field-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
-    gap: var(--space-m);
-}
-
-.difficulty {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-m) var(--space-l);
-}
-
-.choice {
-    display: flex;
-    align-items: center;
-    gap: var(--space-s);
-}
-
-.field label {
-    font-weight: 500;
-}
-
-.field input:not([type="checkbox"], [type="radio"]),
-.field select,
-.field textarea {
-    width: 100%;
-    padding: 0.6em 0.75em;
-    border: 1px solid var(--color-muted-foreground);
-    border-radius: var(--border-radius-s);
-    background-color: var(--color-foreground);
-}
-
-form button {
-    justify-self: start;
-}
-
-.field:has([required]) > label::after {
-    content: "*";
-}
-
-.error {
-    display: none;
-    color: var(--color-error);
-}
-
-.field:has(:user-invalid) .error {
-    display: block;
-}
-
-.field :user-invalid {
-    border-color: var(--color-error);
-}
-
-.facts {
-    display: flex;
-    /* grid-template-columns: repeat(3, 1fr);
-    max-width: 600px; */
-    /* justify-self: start; */
-    /* width: min(100%, 30rem); */
-    gap: var(--space-m);
-}
-
-.card {
-    flex: 1 1 10rem;
-    border-radius: var(--border-radius-m);
-    background-color: var(--color-secondary);
-    padding: var(--space-m);
-}
-
-button {
-    padding: 0.5em 1em;
-    line-height: 1.2;
-    white-space: nowrap;
-    background-color: var(--color-accent, buttonface);
-    color: var(--button-color, buttontext);
-    border: none;
-    border-radius: var(--border-radius-m);
-    font-weight: bold;
-}
-
-.instructions {
-    list-style-position: inside;
+    max-inline-size: 100%;
 }
 
 fieldset {
+    min-inline-size: 0;
     border: 0;
 }
 
@@ -243,38 +76,58 @@ ul[role="list"] {
     list-style: none;
 }
 
-.main__nav {
-    margin-inline-start: auto;
+
+/* GLOBAL STYLES */
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-block-size: 100svh;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: var(--step-0);
+    line-height: var(--leading-body);
 }
 
-.nav__links {
-    display: flex;
-    gap: var(--space-l);
+h1,
+h2,
+legend {
+    line-height: var(--leading-heading);
 }
 
-/* composition */
+h1 {
+    font-size: var(--step-3);
+    font-weight: 800;
+    color: var(--color-primary);
+}
 
+h2,
+legend {
+    font-size: var(--step-2);
+    font-weight: 700;
+}
+
+:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+}
+
+
+/* COMPOSITION */
 .wrapper {
-    flex: 1;
-    width: 100%;
-    max-width: var(--page-width);
+    inline-size: 100%;
+    max-inline-size: var(--page-width);
     margin-inline: auto;
-    margin-top: var(--space-xl);
-    margin-bottom: var(--space-xl);
-    /* background-color: var(--color-foreground); */
+    padding-inline: clamp(var(--space-m), 5vw, var(--space-xl));
 }
 
-header {
-    background-color: var(--color-background);
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    display: flex;
-    align-items: center;
-    gap: var(--space-l);
+.region {
+    padding-block: var(--space-xl);
 }
 
-/* main {
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-} */
+.flow > * + * {
+    margin-block-start: var(--flow-space, var(--space-m));
+}
 
 .cluster {
     display: flex;
@@ -284,142 +137,356 @@ header {
     gap: var(--cluster-gap, var(--space-m));
 }
 
-.flow > * + * {
-    margin-top: var(--flow-space, var(--space-m));
-}
-
-.picture__grid {
+.auto-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
-    gap: var(--grid-gap, var(--space-l));
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--auto-grid-min, 15rem), 100%), 1fr));
+    gap: var(--auto-grid-gap, var(--space-m));
 }
 
-/* utilities */
-.grow {
-    flex: 1;
-}
 
-.p-2 {
-    padding: var(--space-s); 
-}
-
-.p-4 {
-    padding: var(--space-m);
-}
-
-.px-6 {
-    padding-inline: clamp(var(--space-m), 5vw, var(--space-xl));
-}
-
-.py-6 {
-    padding-block: var(--space-m) var(--space-xl);
-}
-
-/* .bg-white {
-    background-color: var(--color-foreground);
-} */
-
-.bg-100 {
-    background-color: var(--color-foreground);
-}
-
-.bg-200 {
-    background-color: #f3dcfe;
-}
-
+/* UTILITIE */
 .text-sm {
-    font-size: 0.9rem;
+    font-size: var(--step--1);
 }
 
-.text-color-primary {
-    color: var(--color-primary);
+.text-muted {
+    color: var(--color-text-muted);
 }
 
-/* blocks */
-.hero {
-    width: min(100%, 15rem);
-    aspect-ratio: 1;
-    border-radius: 50%;             
-    object-fit: cover;
-    justify-self: center;
+
+/* BLOCKS */
+
+/* skip link */
+.skip-link {
+    position: absolute;
+    inset-block-start: var(--space-s);
+    inset-inline-start: var(--space-s);
+    padding: var(--space-s) var(--space-m);
+    border-radius: var(--radius-s);
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    translate: 0 -200%;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 15rem;
-    gap: var(--space-xl) var(--space-xl);
-    grid-template-areas: 
-    "area-2 area-2 area-1"
-    "area-3 area-4 area-4"
-    "area-5 area-5 area-5";
-    align-items: start;
+.skip-link:focus {
+    translate: 0 0;
 }
 
-@media(max-width: 56em) {
-    .grid{
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-        "area-1"
-        "area-2"
-        "area-3"
-        "area-4"
-        "area-5";
-    }
+/* site header */
+.site-header {
+    --cluster-justify: flex-start;
+    --cluster-gap: var(--space-l);
+    padding: var(--space-m);
+    background-color: var(--color-bg);
+    box-shadow: 0 0.5rem 1.5rem var(--color-shadow);
 }
 
-.gallery img {
-    width: 100%;
-    aspect-ratio: 5 / 4;
-    object-fit: cover;
-}
-
-.checklist label {
-    display: flex;
-    gap: 0.75rem;
-    padding: var(--space-xs) 0;
-}
-
-.checklist label:has(input:checked) {
-    text-decoration: line-through;
-    color: var(--color-muted-foreground);
-}
-
-.checklist input {
-    width: 1.25rem;
-    height: 1.25rem;
+.logo {
     flex-shrink: 0;
-    accent-color: var(--color-primary);
+    inline-size: 3.75rem;
 }
 
-.facts__grid dt::after {
-    content: ":";
+.site-nav {
+    margin-inline-start: auto;
 }
 
-.facts__grid .card {
-    text-align: center;
+.site-nav__list {
+    --cluster-justify: flex-start;
+    --cluster-gap: var(--space-l);
 }
 
-.menu-item:hover {
+.site-nav__link {
+    color: var(--color-primary);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.site-nav__link:hover {
     text-decoration: underline;
     text-underline-offset: 0.3em;
 }
 
-button:hover {
+/* dark mode switch (a checkbox with role="switch") */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+    font-size: var(--step--1);
+    cursor: pointer;
+}
+
+.theme-toggle__input {
+    appearance: none;
+    flex-shrink: 0;
+    inline-size: 2.5rem;
+    block-size: 1.5rem;
+    padding: 0.125rem;
+    border: 1px solid var(--color-text-muted);
+    border-radius: var(--radius-pill);
+    background-color: var(--color-surface);
+    cursor: pointer;
+}
+
+.theme-toggle__input::before {
+    content: "";
+    display: block;
+    inline-size: 1.125rem;
+    block-size: 1.125rem;
+    border-radius: 50%;
+    background-color: var(--color-text-muted);
+}
+
+.theme-toggle__input:checked {
+    background-color: var(--color-primary);
+}
+
+.theme-toggle__input:checked::before {
+    translate: 1rem 0;
+    background-color: var(--color-surface);
+}
+
+/* site footer */
+.site-footer {
+    padding: var(--space-m);
+}
+
+/* button (works on <button> and <a>) */
+.button {
+    display: inline-block;
+    padding: 0.5em 1em;
+    border-radius: var(--radius-m);
+    background-color: var(--button-bg, var(--color-primary));
+    color: var(--button-color, var(--color-on-primary));
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.button:hover {
     filter: brightness(0.92);
+}
+
+/* card */
+.card {
+    padding: var(--space-m);
+    border-radius: var(--radius-m);
+    background-color: var(--color-secondary);
+}
+
+/* recipe page: a named-area grid. Elements are placed with grid-area. */
+.recipe {
+    display: grid;
+    grid-template-columns: 1fr 1fr var(--hero-size);
+    grid-template-areas:
+        "intro intro hero"
+        "ingredients method method"
+        "gallery gallery gallery";
+    gap: var(--space-xl);
+    align-items: start;
+}
+
+@media (max-width: 56em) {
+    .recipe {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "hero"
+            "intro"
+            "ingredients"
+            "method"
+            "gallery";
+    }
+}
+
+.recipe__hero {
+    grid-area: hero;
+    justify-self: center;
+    inline-size: 100%;
+    max-inline-size: var(--hero-size);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.recipe__intro {
+    grid-area: intro;
+}
+
+.recipe__ingredients {
+    grid-area: ingredients;
+}
+
+.recipe__method {
+    grid-area: method;
+}
+
+.recipe__gallery {
+    grid-area: gallery;
+}
+
+/* recipe facts (portions, time, difficulty) */
+.facts {
+    --auto-grid-min: 8rem;
+    text-align: center;
+}
+
+.facts dt::after {
+    content: ":";
+}
+
+/* ingredient checklist */
+.checklist label {
+    display: flex;
+    gap: var(--space-s);
+    padding-block: var(--space-xs);
+}
+
+.checklist input {
+    flex-shrink: 0;
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+    accent-color: var(--color-primary);
+}
+
+.checklist li:has(:checked) {
+    color: var(--color-text-muted);
+    text-decoration: line-through;
 }
 
 .checklist label:hover {
     color: var(--color-primary);
 }
 
-:focus-visible {
-    outline: 3px solid var(--ring);
-    outline-offset: 3px;
+/* numbered steps */
+.steps {
+    padding-inline-start: var(--space-l);
+}
+
+/* serving suggestions */
+.gallery {
+    --auto-grid-gap: var(--space-l);
+}
+
+.gallery img {
+    inline-size: 100%;
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+}
+
+/* form */
+.form {
+    --flow-space: var(--space-l);
+    max-inline-size: var(--form-width);
+}
+
+.form-group {
+    display: grid;
+    gap: var(--space-m);
+    padding: var(--space-m);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-m);
+    background-color: var(--color-surface);
+}
+
+/* floating the legend takes it off the border line, so it sits inside the card */
+.form-group legend {
+    float: left;
+    inline-size: 100%;
+}
+
+.form-row {
+    --auto-grid-min: 10rem;
+}
+
+.field {
+    display: grid;
+    gap: var(--space-xs);
+}
+
+.field label {
+    font-weight: 500;
+}
+
+/* "*" after the label of a required field; the empty alt text keeps screen readers quiet */
+.field:has(:required) > label::after {
+    content: " *";
+    content: " *" / "";
+}
+
+.field :is(input, select, textarea) {
+    inline-size: 100%;
+    padding: 0.6em 0.75em;
+    border: 1px solid var(--color-text-muted);
+    border-radius: var(--radius-s);
+    background-color: var(--color-surface);
+}
+
+.field textarea {
+    resize: vertical;
+}
+
+.field ::placeholder {
+    color: var(--color-text-muted);
+    opacity: 1;
+}
+
+.field :is(input, select, textarea):user-invalid {
+    border-color: var(--color-error);
+    box-shadow: 0 0 0 1px var(--color-error);
+}
+
+.field :is(input, select, textarea):user-valid {
+    border-color: var(--color-success);
+    box-shadow: 0 0 0 1px var(--color-success);
+}
+
+.field__error {
+    display: none;
+    color: var(--color-error);
+    font-size: var(--step--1);
+}
+
+.field__error::before {
+    content: "✗ ";
+    content: "✗ " / "";
+}
+
+.field:has(:user-invalid) .field__error {
+    display: block;
+}
+
+/* radio button + label */
+.choice {
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
 }
 
 
-/* exceptions */
+/* EXCEPTIONS */
+
+/* dark mode: switching color-scheme flips every light-dark() token */
+:root:has(.theme-toggle__input:checked) {
+    color-scheme: dark;
+}
+
+/* highlighted button variant */
 [data-variant="highlight"] {
     --button-bg: var(--color-accent);
-    --button-color: var(--color-primary);
+    --button-color: var(--color-on-accent);
+}
+
+/* a form group whose controls sit in one row (radio buttons) */
+.form-group[data-layout="row"] {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* the page you are on */
+[aria-current="page"] {
+    text-decoration: underline;
+    text-decoration-thickness: 0.15em;
+    text-underline-offset: 0.3em;
 }
