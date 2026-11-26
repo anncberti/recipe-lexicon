@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Post your own recipe</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400..800&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header class="p-4">
+            <a class="logo"><img src="logo4.svg" alt="Mama T's logo"></a>
+            <nav class="main__nav">
+                <ul class="nav__links" role="list" class="cluster">
+                    <li><a class="text-color-primary menu-item" href="#">Recipes</a></li>
+                    <li><a class="text-color-primary menu-item" href="#">About</a></li>
+                </ul>
+            </nav>
+            <button type="button" data-variant="highlight" href="/form.html">Upload recipe</button>
+        </header>
+        
+        <div class="wrapper bg-white grow">
+            <main class="px-6 py-6 flow">
+                <h1>Post your own recipe</h1>
+                <p>Request to upload your own recipe with everyone.</p>
+            
+                <form action="" method="get">
+                    <fieldset>
+                        <legend>Recipe</legend>
+                        
+                        <div class="field">
+                            <label for="recipe-name">Recipe title</label>
+                            <input type="text" id="recipe-name" name="recipe-name" placeholder="Give your recipe a name" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="category">Food type</label>
+                            <select id="category" name="category" required>
+                                <option value="" selected>Choose a category</option>
+                                <option value="italian">Italian</option>
+                                <option value="mexican">Mexican</option>
+                                <option value="asian">Asian</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="field-row">
+                            <div class="field">
+                                <label for="minutes">Time to make (in minutes)</label>
+                                <input type="number" min="0" id="minutes" name="minutes" placeholder="0">
+                            </div>
+
+                            <div class="field">
+                                <label for="portions">Portions</label>
+                                <input type="number" min="0" id="portions" name="portions">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Difficulty</legend>
+                        <div class="choice">
+                            <input type="radio" id="easy" name="difficulty" value="easy">
+                            <label for="easy">Easy</label>
+                        </div>
+                        <div class="choice">
+                            <input type="radio" id="intermediate" name="difficulty" value="intermediate">
+                            <label for="intermediate">Intermediate</label>
+                        </div>
+                        <div class="choice">
+                            <input type="radio" id="hard" name="difficulty" value="hard">
+                            <label for="hard">Hard</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Ingredients and instructions</legend>
+
+                        <div class="field">
+                            <label for="ingredients">Ingredients</label>
+                            <textarea id="ingredients" name="ingredients" rows="4" required></textarea>
+                        </div>
+                        <div class="field">
+                            <label for="instructions">Instructions</label>
+                            <textarea id="instructions" name="instructions" rows="4" cols="40" required></textarea>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Your information</legend>
+                        <div class="field">
+                            <label for="name">Your name</label>
+                            <input type="text" id="name" name="name">
+                        </div>
+                        <div class="field">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                    </fieldset>
+                
+                    <button type="button" data-variant="highlight">Submit recipe</button>
+                </form>
+            </main>
+        </div>
+    
+        <footer class="cluster p-4 bg-white">
+            <div>
+                <img src="https://picsum.photos/80/40" alt="">
+            </div>
+            <div>
+                <p>© Annie Bertilsson</p>
+            </div>
+        </footer>
+    </body>
+</html>

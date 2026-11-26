@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Post your own recipe</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400..800&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header class="p-4">
+            <a class="logo"><img src="logo4.svg" alt="Mama T's logo"></a>
+            <nav class="main__nav">
+                <ul class="nav__links" role="list" class="cluster">
+                    <li><a class="text-color-primary menu-item" href="#">Recipes</a></li>
+                    <li><a class="text-color-primary menu-item" href="#">About</a></li>
+                </ul>
+            </nav>
+            <button type="button" data-variant="highlight">Share recipe</button>
+        </header>
+        <div>
+            <main>
+                <h1>Post your own recipe</h1>
+                <p>Mama T's lets you share your own recipes to everyone.</p>
+            
+                <fieldset>
+                    <legend>Recipe</legend>
+
+                    <label for="recipe-name">Recipe title</label>
+                    <input type="text" id="recipe-name" name="recipe-name" placeholder="Give your recipe a name" required>
+
+                    <label>Food type</label>
+                    <select id="" name="">
+                        <option value="" selected>Choose a category</option>
+                        <option value="italian">Italian</option>
+                        <option value="Mexican">Mexican</option>
+                        <option value="Asian">Asian</option>
+                        <option value="other">Other</option>
+                    </select>
+                </fieldset>
+            </main>
+        </div>
+    </body>
+</html>

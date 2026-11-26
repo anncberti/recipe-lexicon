@@ -11,23 +11,26 @@
     </head>
 
     <body>
-        <header class="cluster p-4 bg-100">
-            <a class="logo"><img src="logo.png" alt="Mama T's logo"></a>
-            <nav>
-                <ul role="list" class="cluster">
+        <header class="p-4">
+            <a class="logo"><img src="logo4.svg" alt="Mama T's logo"></a>
+            <nav class="main__nav">
+                <ul class="nav__links" role="list" class="cluster">
                     <li><a class="text-color-primary menu-item" href="#">Recipes</a></li>
                     <li><a class="text-color-primary menu-item" href="#">About</a></li>
-                    <li><button type="button" data-variant="highlight">Share recipe</button></li>
                 </ul>
             </nav>
+            <a href="form.html">
+                <button type="button" data-variant="highlight">Upload recipe</button>
+            </a>
         </header>
         <div class="wrapper bg-white grow">  
-            <main class="px-6 py-6">
-                <img class="hero" src="pancakes.jpg" alt="Stack of pancakes with butter and maple syrup">
+            <main class="px-6 py-6 grid">
+                <img class="hero" style="grid-area: area-1;" src="pancakes.jpg" alt="Stack of pancakes with butter and maple syrup">
                 
-                <article class="flow">
+                <article class="flow" style="grid-area: area-2">
                     <h1>American-style vegan pancakes</h1>
-                    <p>Make traditional American pancakes with this easy and delicious pancake recipe, completely free from animal products.</p>
+                    <p>The BEST and fluffiest vegan pancakes made with just 6 easy pantry staples you probably have on hand right now! Made in 1 bowl, the recipe can easily doubled, tripled or even quadrupled.</p>
+                
                     <dl class="facts">
                         <div class="card">
                             <dt>Portions</dt>
@@ -35,58 +38,58 @@
                         </div>
                         <div class="card">
                         <div>
-                            <dt>Portions</dt>
+                            <dt>Time</dt>
                             <dd>4</dd>
                         </div>
                         </div>
                         <div class="card">
-                            <dt>Portions</dt>
+                            <dt>Difficulty</dt>
                             <dd>4</dd>
                         </div>
                     </dl>
-                    <section class="flow">
-                        <fieldset class="checklist flow">
-                            <legend>Ingredients</legend>
-                            <div class="card">
-                                <ul role="list">
-                                    <li><label><input type="checkbox"> 2 1/2 dl all-purpose flour</label></li>
-                                    <li><label><input type="checkbox"> 1/2 tsp salt</label></li>
-                                    <li><label><input type="checkbox"> 3 dl milk</label></li>
-                                    <li><label><input type="checkbox"> 2 eggs</label></li>
-                                    <li><label><input type="checkbox"> 2 tsp baking powder</label></li>
-                                    <li><label><input type="checkbox"> butter (for frying)</label></li>
-                                    <li><label><input type="checkbox"> maple syrup, berries or fruit for serving</label></li>
-                                </ul>
-                            </div>
-                        </fieldset>
-                    </section>
-
-                    <section class="flow">
-                        <h2>Instructions</h2>
-                        <ol class="flow">
-                            <li>Mix together flour, baking powder, and salt in a bowl.</li>
-                            <li>Slowly pour in half of the milk while whisking until it's a smooth batter.</li>
-                            <li>Whisk in the rest of the milk and the eggs.</li>
-                            <li>Let the batter rest for 10 minutes.</li>
-                            <li>Fry the pancakes in a little bit of butter in a pan.</li>
-                            <li>Serve pancakes with maple syrup, berries or fruit.</li>
-                        </ol>
-                    </section>
-
-                    <section class="flow">
-                        <h2>Serving suggestions</h2>
-                        <div class="grid gallery">
-                            <figure>
-                                <img src="pancakes2.jpg" alt="Stack of pancakes served with blueberries, raspberries and maple syrup on top">
-                                <figcaption class="text-sm">With mixed berries</figcaption>
-                            </figure>
-                            <figure>
-                                <img src="easy-american-pancakes.jpg" alt="Stack of pancakes served with blueberries and maple syrup on top">
-                                <figcaption class="text-sm">With blueberries and syrup</figcaption>
-                            </figure>
-                        </div>
-                    </section>
                 </article>
+                <section class="flow" style="grid-area: area-3">
+                    <fieldset class="checklist flow">
+                        <legend>Ingredients</legend>
+                        <div class="card">
+                            <ul role="list">
+                                <li><label><input type="checkbox"> 1 1/2 cups all purpose flour</label></li>
+                                <li><label><input type="checkbox"> 1 tablespoon baking powder</label></li>
+                                <li><label><input type="checkbox"> 1/2 teaspoon salt</label></li>
+                                <li><label><input type="checkbox"> 2 tablespoons granulated sugar</label></li>
+                                <li><label><input type="checkbox"> 1 cup soy milk</label></li>
+                                <li><label><input type="checkbox"> 1/2 cup water</label></li>
+                                <li><label><input type="checkbox"> 2 tablespoons canola oil</label></li>
+                                <li><label><input type="checkbox"> Maple syrup, vegan butter, berries or fruit for serving</label></li>
+                            </ul>
+                        </div>
+                    </fieldset>
+                </section>
+
+                <section class="flow" style="grid-area: area-4">
+                    <h2>Instructions</h2>
+                    <ol class="flow instructions">
+                        <li>In a large bowl, whisk together the flour, baking powder, salt and sugar.</li>
+                        <li>Pour the milk, water and oil into the bowl with the dry ingredients, and stir with a large spoon until just combined. A few lumps are okay; do not over mix or your pancakes won't be as fluffy.</li>
+                        <li>Heat a large griddle or pan over medium-high heat. Grease the pan with vegan butter or coconut oil, and drop about 1/3 cup of the batter onto it. Cook until bubbles form, then flip and cook until golden brown on the other side, about 1-2 minutes. Repeat with all the remaining batter.</li>
+                        <li>Serve with vegan butter, pure maple syrup and perhaps some fresh fruit.</li>
+                    </ol>
+                </section>
+
+                <section class="flow" style="grid-area: area-5">
+                    <h2>Serving suggestions</h2>
+                    <div class="picture__grid gallery">
+                        <figure>
+                            <img src="pancakes2.jpg" alt="Stack of pancakes served with blueberries, raspberries and maple syrup on top">
+                            <figcaption class="text-sm">With mixed berries</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="easy-american-pancakes.jpg" alt="Stack of pancakes served with blueberries and maple syrup on top">
+                            <figcaption class="text-sm">With blueberries and syrup</figcaption>
+                        </figure>
+                    </div>
+                </section>
+
             </main>
         </div>
         <footer class="cluster p-4 bg-white">
