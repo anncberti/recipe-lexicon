@@ -17,8 +17,8 @@
             <a class="logo" href="index.html"><img src="logo4.svg" alt="Mama T's, home"></a>
             <nav class="site-nav" aria-label="Main">
                 <ul class="site-nav__list cluster" role="list">
-                    <li><a class="site-nav__link" href="index.html" aria-current="page">Recipes</a></li>
-                    <li><a class="site-nav__link" href="#">About</a></li>
+                    <li><a class="nav-link" href="index.html">Recipes</a></li>
+                    <li><a class="nav-link" href="#">About</a></li>
                     <li><a class="button" data-variant="highlight" href="form.html">Upload recipe</a></li>
                 </ul>
             </nav>
@@ -92,9 +92,26 @@
             </article>
         </main>
 
-        <footer class="site-footer cluster">
-            <img src="https://picsum.photos/80/40" width="80" height="40" alt="">
-            <p>© Annie Bertilsson</p>
+        <footer class="site-footer wrapper cluster">
+            <div class="site-footer__brand flow">
+                <a class="logo" href="index.html"><img src="logo4.svg" alt="Mama T's, home"></a>
+                <p>Easy everyday recipes anyone can make.</p>
+            </div>
+            <nav class="site-footer__nav" aria-label="Footer">
+                <ul class="flow" role="list">
+                    <li><a class="nav-link" href="#">About the site</a></li>
+                    <li class="flow">
+                        <span class="site-footer__label">More recipes</span>
+                        <ul class="flow" role="list">
+                            <li><a class="nav-link" href="#">Breakfast</a></li>
+                            <li><a class="nav-link" href="#">Dinner</a></li>
+                            <li><a class="nav-link" href="#">Dessert</a></li>
+                            <li><a class="nav-link" href="#">Fika</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <p class="site-footer__legal text-sm text-muted">Images from picsum.photos · © 2026 Annie Bertilsson</p>
         </footer>
     </body>
 </html>

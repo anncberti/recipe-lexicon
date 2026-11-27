@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mama T's vegan recipes</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400..800&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <a class="skip-link" href="#main">Skip to main content</a>
+
+        <header class="site-header cluster">
+            <a class="logo" href="index.html"><img src="logo4.svg" alt="Mama T's, home"></a>
+            <nav class="site-nav" aria-label="Main">
+                <ul class="site-nav__list cluster" role="list">
+                    <li><a class="nav-link" href="index.html" aria-current="page">Recipes</a></li>
+                    <li><a class="nav-link" href="#">About</a></li>
+                    <li><a class="button" data-variant="highlight" href="form.html">Upload recipe</a></li>
+                </ul>
+            </nav>
+            <label class="theme-toggle">
+                <input class="theme-toggle__input" type="checkbox" role="switch">
+                Dark mode
+            </label>
+        </header>
+
+        <main class="wrapper region flow home" id="main">
+            <section class="hero">
+                <img class="hero__image" src="pancakes.jpg" alt="Stack of pancakes with butter and maple syrup">
+                <div class="hero__content flow">
+                    <h1>Vegan recipes for every day</h1>
+                    <p>Simple ingredients, clear steps and food that everyone at the table will enjoy.</p>
+                </div>
+            </section>
+
+            <nav aria-label="Recipe categories">
+                <ul class="categories cluster" role="list">
+                    <li><a class="tag" href="#">Breakfast</a></li>
+                    <li><a class="tag" href="#">Dinner</a></li>
+                    <li><a class="tag" href="#">Dessert</a></li>
+                    <li><a class="tag" href="#">Fika</a></li>
+                </ul>
+            </nav>
+
+            <ul class="recipe-list auto-grid" role="list">
+                <li>
+                    <article class="recipe-card">
+                        <img class="recipe-card__image" src="pancakes2.jpg" width="600" height="400" alt="">
+                        <div class="recipe-card__body flow">
+                            <h2 class="recipe-card__title"><a class="recipe-card__link" href="index.html">American-style vegan pancakes</a></h2>
+                            <p class="text-sm text-muted"><time datetime="PT20M">20 min</time></p>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article class="recipe-card">
+                        <img class="recipe-card__image" src="https://picsum.photos/seed/dinner/600/400" width="600" height="400" alt="">
+                        <div class="recipe-card__body flow">
+                            <h2 class="recipe-card__title"><a class="recipe-card__link" href="pancakes.html">Creamy mushroom pasta</a></h2>
+                            <p class="text-sm text-muted"><time datetime="PT45M">45 min</time></p>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article class="recipe-card">
+                        <img class="recipe-card__image" src="https://picsum.photos/seed/fika/600/400" width="600" height="400" alt="">
+                        <div class="recipe-card__body flow">
+                            <h2 class="recipe-card__title"><a class="recipe-card__link" href="pancakes.html">Chocolate oat cookies</a></h2>
+                            <p class="text-sm text-muted"><time datetime="PT15M">15 min</time></p>
+                        </div>
+                    </article>
+                </li>
+            </ul>
+        </main>
+
+        <footer class="site-footer wrapper cluster">
+            <div class="site-footer__brand flow">
+                <a class="logo" href="index.html"><img src="logo4.svg" alt="Mama T's, home"></a>
+                <p>Easy everyday recipes anyone can make.</p>
+            </div>
+            <nav class="site-footer__nav" aria-label="Footer">
+                <ul class="flow" role="list">
+                    <li><a class="nav-link" href="#">About the site</a></li>
+                    <li class="flow">
+                        <span class="site-footer__label">More recipes</span>
+                        <ul class="flow" role="list">
+                            <li><a class="nav-link" href="#">Breakfast</a></li>
+                            <li><a class="nav-link" href="#">Dinner</a></li>
+                            <li><a class="nav-link" href="#">Dessert</a></li>
+                            <li><a class="nav-link" href="#">Fika</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <p class="site-footer__legal text-sm text-muted">Images from picsum.photos · © 2026 Annie Bertilsson</p>
+        </footer>
+    </body>
+</html>

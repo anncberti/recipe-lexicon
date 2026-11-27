@@ -1,3 +1,15 @@
+/* ==========================================================================
+   Mama T's: design system, organised with CUBE CSS
+   Tokens · Reset · Global · Composition · Utilities · Blocks · Exceptions
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   TOKENS
+   All colours are hsl(). Colour tokens use light-dark(<light>, <dark>), so the
+   dark palette lives next to the light one. Which one applies is decided by
+   color-scheme on :root (see the dark mode switch under EXCEPTIONS).
+   -------------------------------------------------------------------------- */
 :root {
     color-scheme: light;
 
@@ -16,11 +28,14 @@
     --color-success:    light-dark(hsl(142 70% 28%), hsl(142 60% 60%));
     --color-focus:      var(--color-primary);
     --color-shadow:     light-dark(hsl(210 10% 60% / 0.2), hsl(0 0% 0% / 0.5));
+    --color-scrim:      hsl(185 40% 12% / 0.8);                           /* panel behind text on images */
+    --color-on-scrim:   hsl(0 0% 100%);
 
     /* type */
     --font-body: "Montserrat", system-ui, sans-serif;
     --step--1: 0.9rem;
     --step-0: 1rem;
+    --step-1: 1.25rem;
     --step-2: 1.5rem;
     --step-3: clamp(1.75rem, 1.25rem + 2vw, 2.5rem);
     --leading-body: 1.5;
@@ -45,7 +60,10 @@
 }
 
 
-/* RESET */
+/* --------------------------------------------------------------------------
+   RESET
+   Based on: <ADD THE SOURCE URL OF THE RESET YOU BASED THIS ON>
+   -------------------------------------------------------------------------- */
 *,
 *::before,
 *::after {
@@ -77,7 +95,9 @@ ul[role="list"] {
 }
 
 
-/* GLOBAL STYLES */
+/* --------------------------------------------------------------------------
+   GLOBAL STYLES (elements only, no classes)
+   -------------------------------------------------------------------------- */
 body {
     display: grid;
     grid-template-rows: auto 1fr auto;
@@ -113,7 +133,11 @@ legend {
 }
 
 
-/* COMPOSITION */
+/* --------------------------------------------------------------------------
+   COMPOSITION (layout primitives, configured with custom properties)
+   -------------------------------------------------------------------------- */
+
+/* centred column with fluid side padding */
 .wrapper {
     inline-size: 100%;
     max-inline-size: var(--page-width);
@@ -121,14 +145,17 @@ legend {
     padding-inline: clamp(var(--space-m), 5vw, var(--space-xl));
 }
 
+/* vertical breathing room around a page section */
 .region {
     padding-block: var(--space-xl);
 }
 
+/* space between direct children, not above the first or below the last */
 .flow > * + * {
     margin-block-start: var(--flow-space, var(--space-m));
 }
 
+/* row of items that wraps when there is no room */
 .cluster {
     display: flex;
     flex-wrap: wrap;
@@ -137,6 +164,7 @@ legend {
     gap: var(--cluster-gap, var(--space-m));
 }
 
+/* equal columns; the number of columns follows the available width */
 .auto-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(var(--auto-grid-min, 15rem), 100%), 1fr));
@@ -144,7 +172,9 @@ legend {
 }
 
 
-/* UTILITIE */
+/* --------------------------------------------------------------------------
+   UTILITIES (one job each)
+   -------------------------------------------------------------------------- */
 .text-sm {
     font-size: var(--step--1);
 }
@@ -154,9 +184,11 @@ legend {
 }
 
 
-/* BLOCKS */
+/* --------------------------------------------------------------------------
+   BLOCKS (components)
+   -------------------------------------------------------------------------- */
 
-/* skip link */
+/* skip link: hidden until it gets keyboard focus */
 .skip-link {
     position: absolute;
     inset-block-start: var(--space-s);
@@ -195,13 +227,13 @@ legend {
     --cluster-gap: var(--space-l);
 }
 
-.site-nav__link {
+.nav-link {
     color: var(--color-primary);
     font-weight: 700;
     text-decoration: none;
 }
 
-.site-nav__link:hover {
+.nav-link:hover {
     text-decoration: underline;
     text-underline-offset: 0.3em;
 }
@@ -245,9 +277,19 @@ legend {
     background-color: var(--color-surface);
 }
 
-/* site footer */
+/* site footer (also a .wrapper and a .cluster) */
 .site-footer {
-    padding: var(--space-m);
+    align-items: flex-start;
+    padding-block: var(--space-l) var(--space-xl);
+    --flow-space: var(--space-s);
+}
+
+.site-footer__label {
+    font-weight: 700;
+}
+
+.site-footer__legal {
+    flex-basis: 100%;
 }
 
 /* button (works on <button> and <a>) */
@@ -276,14 +318,131 @@ legend {
     background-color: var(--color-secondary);
 }
 
+/* start page: spacing between hero, categories and cards */
+.home {
+    --flow-space: var(--space-l);
+}
+
+/* hero: image and text share one grid cell, so the text sits on top of the image */
+.hero {
+    display: grid;
+    overflow: hidden;
+    border-radius: var(--radius-m);
+}
+
+.hero > * {
+    grid-area: 1 / 1;
+}
+
+.hero__image {
+    inline-size: 100%;
+    block-size: 100%;
+    aspect-ratio: 16 / 7;
+    object-fit: cover;
+}
+
+.hero__content {
+    align-self: end;
+    padding: var(--space-l);
+    background-color: var(--color-scrim);
+    color: var(--color-on-scrim);
+}
+
+.hero__content h1 {
+    color: inherit;
+}
+
+.hero__content p {
+    max-inline-size: 45ch;
+}
+
+/* category links */
+.categories {
+    --cluster-justify: flex-start;
+    --cluster-gap: var(--space-s);
+}
+
+.tag {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-m);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-pill);
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.tag:hover {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+}
+
+/* recipe cards: the whole card is clickable through the title link */
+.recipe-list {
+    --auto-grid-min: 14rem;
+    --auto-grid-gap: var(--space-l);
+}
+
+.recipe-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-m);
+    background-color: var(--color-surface);
+}
+
+.recipe-card__image {
+    inline-size: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+
+.recipe-card__body {
+    --flow-space: var(--space-xs);
+    padding: var(--space-m);
+}
+
+.recipe-card__title {
+    font-size: var(--step-1);
+}
+
+.recipe-card__link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.recipe-card__link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+.recipe-card__link:focus-visible {
+    outline: none;
+}
+
+.recipe-card:has(:focus-visible) {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+}
+
+.recipe-card:hover {
+    border-color: var(--color-primary);
+}
+
+.recipe-card:hover .recipe-card__link {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
 /* recipe page: a named-area grid. Elements are placed with grid-area. */
 .recipe {
     display: grid;
     grid-template-columns: 1fr 1fr var(--hero-size);
     grid-template-areas:
-        "intro intro hero"
+        "intro       intro  hero"
         "ingredients method method"
-        "gallery gallery gallery";
+        "gallery     gallery gallery";
     gap: var(--space-xl);
     align-items: start;
 }
@@ -465,7 +624,9 @@ legend {
 }
 
 
-/* EXCEPTIONS */
+/* --------------------------------------------------------------------------
+   EXCEPTIONS (state and variation, always via attributes)
+   -------------------------------------------------------------------------- */
 
 /* dark mode: switching color-scheme flips every light-dark() token */
 :root:has(.theme-toggle__input:checked) {
