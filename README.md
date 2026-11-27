@@ -1,6 +1,6 @@
 # Mama T's, receptsajt
 
-Receptsajt byggd med HTML och CSS under Lexicons frontendutbildning, vecka 1 till 4. Inget JavaScript.
+Receptsajt byggd med HTML och CSS under Lexicons frontendutbildning.
 
 ## Sidor
 
