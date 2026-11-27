@@ -4,8 +4,8 @@ Receptsajt byggd med HTML och CSS under Lexicons frontendutbildning, vecka 1 til
 
 ## Sidor
 
-* Startsida (`index.html`) med hero där rubriken ligger ovanpå bilden, kategorier och receptkort
-* Receptsida för pannkakor (`pancakes.html`)
+* Startsida (`home.html`) med hero där rubriken ligger ovanpå bilden, kategorier och receptkort
+* Receptsida för pannkakor (`index.html`)
 * Dela recept (`form.html`), ett formulär med validering i HTML och CSS
 
 ## Fokus utifrån undervisningen
